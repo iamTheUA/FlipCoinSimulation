@@ -16,13 +16,30 @@ else
 fi
 }
 
-#Running loop for 5 times
-for ((i=0;i<5;i++))
+#Running loop for 42 times
+for ((i=0;i<42;i++))
 do
-	Flip
-	HeadOrTail
+	if [ $Head -lt 21 ]
+	then
+		if [ $Tail -lt 21 ]
+		then
+			Flip
+			HeadOrTail
+		fi
+	fi
 done
 
-echo "Heads: " $Head
-echo "Tails: " $Tail
+if [ $Head -eq $Tail ]
+then
+	echo "It's a Tie"
+else
+	if [ $Head -gt $Tail ]
+	then
+		diff=$((Head-Tail))
+		echo "Head Won by "$diff
+	else
+		diff=$((Tail-Head))
+		echo "Tail Won by "$diff
+	fi
+fi
 
