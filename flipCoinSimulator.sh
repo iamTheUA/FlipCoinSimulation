@@ -29,9 +29,23 @@ do
 	fi
 done
 
+#Tie fuction if its a tie
+function Tie()
+{
+diff=0
+while [ diff -gt 1 ]
+do
+	Flip
+	HeadOrTail
+done
+}
+
 if [ $Head -eq $Tail ]
 then
 	echo "It's a Tie"
+	Tie
+	echo "Head: " $Head
+	echo "Tail: " $Tail
 else
 	if [ $Head -gt $Tail ]
 	then
