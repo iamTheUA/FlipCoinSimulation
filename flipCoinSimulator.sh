@@ -11,9 +11,12 @@ function HeadOrTail()
 if [ $flip -eq 0 ]
 then
 	Head=$((Head+1))
+	diff=$((Head-Tail))
 else
 	Tail=$((Tail+1))
+	diff=$((Tail-Head))
 fi
+
 }
 
 #Running loop for 42 times
