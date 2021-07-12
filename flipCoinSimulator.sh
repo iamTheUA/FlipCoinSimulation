@@ -11,8 +11,10 @@ function HeadOrTail()
 if [ $flip -eq 0 ]
 then
 	Head=$((Head+1))
+	diff=$((Head - Tail))
 else
 	Tail=$((Tail+1))
+	diff=$((Tail-Head))
 fi
 }
 
@@ -33,7 +35,7 @@ done
 function Tie()
 {
 diff=0
-while [ diff -gt 1 ]
+while [ diff -lt 1 ]
 do
 	Flip
 	HeadOrTail
