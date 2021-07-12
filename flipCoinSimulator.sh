@@ -36,7 +36,7 @@ done
 function Tie()
 {
 diff=0
-while [ diff -gt 1 ]
+while [ diff -lt 1 ]
 do
 	Flip
 	HeadOrTail
